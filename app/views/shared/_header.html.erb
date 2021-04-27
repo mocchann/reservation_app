@@ -1,23 +1,45 @@
-<header class="header">
-  <div class="header-inner">
-    <div class="header-left-nav">
-        <!--<a href="/"><img alt="サイトのロゴ画像" src="/assets/logo.png"></a>-->
-<!--        <form action="https://presite-potepancamp-rails-02.herokuapp.com/rooms/search" accept-charset="UTF-8" method="get">-->
-<!--        <div class="header-sharch d-lg-inline-block d-none">-->
-<!--          <input type="text" name="area" id="area" value="" class="form-control" placeholder="エリア">-->
-<!--          <i class="fas fa-map-marker-alt"></i>-->
-<!--        </div>-->
-<!--        <div class="header-sharch d-lg-inline-block d-none">-->
-<!--          <input type="text" name="keyword" id="keyword" value="" class="form-control" placeholder="キーワード">-->
-<!--          <i class="fas fa-search"></i>-->
-<!--        </div>-->
-<!--        <input type="submit" name="commit" value="" class="d-none" data-disable-with="">-->
-<!--</form>    </div>-->
-    <div class="header-right-nav">
-        <!--<div class="nav-item">-->
-        <!--  <a class="btn btn-primary my-2 mx-3" href="/users/sign_in">ログイン</a>-->
-        <!--  <a class="btn btn-secondary" href="/users/sign_up">登録する</a>-->
-        <!--</div>-->
-    </div>
+<div class="header-wrapper">
+  <div class="float-left form-inline">
+    <%= link_to image_tag("logo.png", class: "logo-img h-100", alt: "ポテパンロゴ"), "/" %>
+    <%= form_for :rooms_search ,url: search_rooms_path, method: :get do |form| %>
+      <div class="header-sharch d-lg-inline-block d-none">
+        <i class="fas fa-map-marker-alt" style="margin-top: 12px; margin-left: 5px; position:absolute;"></i>
+          <%= form.text_field :area, value: "", class: "form-control pl-4", placeholder: "エリア" %>
+      </div>
+      <div class="header-sharch d-lg-inline-block d-none">
+        <i class="fas fa-search" style="margin-top: 12px; margin-left: 5px; position:absolute;"></i>
+          <%= form.text_field :keyword, value: "", class: "form-control pl-4", placeholder: "キーワード" %>
+      </div>
+      <%= form.submit "", class: "d-none" %>
+    <% end %>
   </div>
-</header>
+  
+  <div class="float-right mr-2">
+    <% if current_user.blank? %>
+      <div class="mt-3">
+        <%= link_to "ログイン", "/users/sign_in", class: "btn btn-primary mr-3" %>
+        <%= link_to "登録する", "/users/sign_up", class: "btn btn-secondary" %>
+      </div>
+    <% else %>
+      <div class="nav-item d-sm-inline-block d-none mr-3 text-light">
+        <%= current_user.name %>
+      </div>
+      <div class="btn-group mr-3">
+        <div class="pt-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="0,5">
+          <% if current_user.icon_img.attached? %>
+            <%= image_tag current_user.icon_img, class: "rounded-circle", size: "57x57" %>
+          <% else %>
+            <%= image_tag "default_profile_img.jpg", class: "rounded-circle", size: "57x57" %>
+          <% end %>
+        </div>
+        <ul class="dropdown-menu dropdown-menu-right">
+          <li><%= link_to "ルーム登録", "/rooms/new", class: "dropdown-item" %>"</li>
+          <li><%= link_to "登録済みルーム一覧", "/rooms", class: "dropdown-item" %>"</li>
+          <li><%= link_to "予約済みルーム一覧", "/reservations", class: "dropdown-item" %>"</li>
+          <li><%= link_to "設定", "/users/account", class: "dropdown-item" %>"</li>
+          <li><%= link_to "ログアウト", destroy_user_session_path, class: "dropdown-item", method: :delete %>"</li>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+</div>

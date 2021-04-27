@@ -1,0 +1,86 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-2 room-nav room-nav-pc border-right d-lg-block d-none">
+      <ul>
+        <li class="active">基本情報</li>
+      </ul>
+    </div>
+    <div class="col-lg-2 room-nav room-nav-mobile d-lg-none"> <!--レスポンシブ-->
+      <ul>
+        <li class="active">基本情報</li>
+      </ul>
+    </div>
+  
+    <div class="col-lg-10" style="background-color: #F6F8F9;">
+      <div class="m-5 border" style="background-color: #fff;">
+        <!--エラーメッセージ-->
+        <%= form_with(model: @room, local: true) do |form| %>
+          <% if @room.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@room.errors.count, "error") %> prohibited this room from being saved:</h2>
+              <ul>
+                <% @room.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <!--登録フォーム-->
+          <div class="form-group p-3 mx-2 border-bottom">
+            <h5>ルーム情報登録</h5>
+          </div>
+          
+          <div class="field form-group form-row p-3 mx-2 border-bottom">
+            <div class="col-md-3 required-b pt-2">
+              <%= form.label :ルーム名 %>
+              <span class="badge badge-danger p-1">必須</span>
+            </div>
+            <%= form.text_field :name, autofocus: true, autocomplete: "name", class: "form-control col-md-9 px-2 mb-4" %>
+          </div>
+          
+          <div class="field form-group form-row p-3 mx-2 border-bottom">
+            <div class="col-md-3 required-b pt-2">
+              <%= form.label :ルーム紹介 %>
+              <span class="badge badge-danger p-1">必須</span>
+            </div>
+            <%= form.text_field :description, autofocus: true, autocomplete: "description", class: "form-control col-md-9 px-2 mb-4", style: "height: 200px;" %>
+          </div>
+          
+          <div class="field form-group form-row p-3 mx-2 border-bottom">
+            <div class="col-md-3 required-b pt-2">
+              <%= form.label :料金 %>
+              <span class="badge badge-danger p-1">必須</span>
+            </div>
+            <%= form.text_field :price, autofocus: true, autocomplete: "price", class: "form-control col-md-9 px-2 mb-4" %>
+          </div>
+          
+          <div class="field form-group form-row p-3 mx-2 border-bottom">
+            <div class="col-md-3 required-b pt-2">
+              <%= form.label :住所 %>
+              <span class="badge badge-danger p-1">必須</span>
+            </div>
+            <%= form.text_field :address, autofocus: true, autocomplete: "address", class: "form-control col-md-9 px-2 mb-4" %>
+          </div>
+          
+          <div class="field form-group form-row p-3 mx-2 border-bottom">
+            <div class="col-md-3 required-b pt-2">
+              <%= form.label :ルーム画像 %>
+              <span class="badge badge-danger p-1">必須</span>
+            </div>
+            <%= form.text_field :new_room_img, autofocus: true, autocomplete: "new_room_img", class: "form-control col-md-9 px-2 mb-4" %>
+          </div>
+      
+          <div class="actions p-3 mx-2">
+            <%= form.submit "登録", class: "col-2 btn btn-primary mx-3" %>
+          </div>
+          
+        <% end %>
+        
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<!--この１行は後で-->
+<%#= javascript_pack_tag 'room_img_attach' %>

@@ -1,0 +1,57 @@
+<h1>予約内容確認</h1>
+<%= @reservation.end_date %>
+<%= link_to 'Back', reservations_path %>
+<div class="container">
+  <div class="rounded border p-4">
+    <p>
+      <%= "¥ #{@reservation.room.price}／日" %>
+    </p>
+    <%= form_with(model: @reservation, url: reservations_path, local: true, method: :post, class: "py-3") do |form| %>
+      <% if @reservation.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@reservation.errors.count, "error") %> prohibited this reservation from being saved:</h2>
+
+          <ul>
+            <% @reservation.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <%= form.hidden_field :user_id, value: current_user.id %>
+      <%= form.hidden_field :room_id, value: @room.id %>
+      <div class="field form-group">
+        <%= form.label :start_date %>
+        <%= form.text_field :start_date, class: "form-control", readonly: "readonly" %>
+      </div>
+
+      <div class="field form-group">
+        <%= form.label :end_date %>
+        <%= form.text_field :end_date, class: "form-control", readonly: "readonly" %>
+      </div>
+
+      <div class="field form-group border-bottom">
+        <h6><%= "使用日数 : #{@date_diff}日" %></h6>
+      </div>
+
+      <div class="field form-group border-bottom">
+          <%= form.hidden_field :number_of_people, value: @reservation.number_of_people %>
+        <h6><%= "人数 : #{@reservation.number_of_people}人" %></h6>
+      </div>
+
+      <div class="field form-group">
+        <%= form.label :total_amount %>
+        <%= form.text_field :total_amount, class: "form-control", readonly: "readonly" %>
+      </div>
+
+      <div class="field form-group border-bottom">
+        <p>上記内容でよろしければ「予約を確定」を押してください</p>
+      </div>
+
+      <div class="actions form-group">
+        <%= form.submit "予約を確定", class: "btn btn-primary my-3 form-control" %>
+        <%= link_to "ルーム詳細に戻る", @room, class: "btn btn-secondary form-control" %>
+      </div>
+    <% end %>
+  </div>
+</div>

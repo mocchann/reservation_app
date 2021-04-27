@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container-fluid">
+  <div class="row reservation-show">
+    <div class="col-md-12" style="background-color: #f6f8f9;">
+      <div class="view-box border mx-5 my-4" style="background-color: #fff;">
+        <div class="field form-row p-3 mx-3 border-bottom">
+            <div class="col-md-3 required-b">
+              <%= label_tag "予約した部屋" %>
+            </div>
+            <div class="col-md-9 px-3 mb-2">
+              <%= @reservation.room.name %>
+            </div>
+        </div>
+        <div class="field form-row p-3 mx-3 border-bottom">
+            <div class="col-md-3 required-b">
+              <%= label_tag "開始日" %>
+            </div>
+            <div class="col-md-9 px-3 mb-2">
+              <%= @reservation&.start_date.strftime('%Y年%m月%d日') %>
+            </div>
+        </div>
+        <div class="field form-row p-3 mx-3 border-bottom">
+            <div class="col-md-3 required-b">
+              <%= label_tag "終了日" %>
+            </div>
+            <div class="col-md-9 px-3">
+              <%= @reservation&.end_date.strftime('%Y年%m月%d日') %>
+            </div>
+        </div>
+        <div class="field form-row p-3 mx-3">
+            <div class="col-md-3 required-b">
+              <%= label_tag "価格" %>
+            </div>
+            <div class="col-md-9 px-3">
+              <%= "#{@reservation.room.price}円" %>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
