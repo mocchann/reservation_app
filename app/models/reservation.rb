@@ -4,11 +4,10 @@ class Reservation < ApplicationRecord
   validates :start_date, presence: true
   validates :end_date, presence: true
   validates :number_of_peaple, presence: true
-  validate :judge_end_date
+  validate :start_end_check
   
-  def judge_end_date
-    if self.end_date && self.start_date && self.end_date < self.start_date ||
-    end
+  def start_end_check
+    errors.add(:end_date, "は開始日より前の日付は登録できません") unless self.start_date < self.end_date
   end
   
 end
