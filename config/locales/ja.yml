@@ -1,8 +1,20 @@
 ja:
-  activerecord:
-    :
-    task:
-      task_title: "タイトル"
-      start_date: "開始日"
-      end_date: "終了日"
-      :
+  adctiverecord:
+    models:
+      room: 部屋
+      reservation: 予約
+    attributes:
+      room:
+        new_room_img: ルーム画像
+        name: ルーム名
+        description: ルーム紹介
+        price: 値段
+        address: 住所
+      reservation:
+        start_date: 開始日
+        end_date: 終了日
+        number_of_people: 人数
+        total_amount: 合計料金
+    errors:
+      message:
+        early: は今日以降の日付で選択して下さい

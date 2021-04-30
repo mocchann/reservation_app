@@ -10,12 +10,23 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require_tree.
+ *= require_self
  */
- 
 @import "bootstrap";
-@import 'home';
-@import 'reservations';
-@import 'rooms';
-@import 'users';
-@import 'profile-account';
+// @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 @import 'header-footer';
+@import 'home';
+@import 'profile-account';
+@import 'rooms';
+
+body {
+    min-height: 100vh;
+    min-width: 450px;
+    position: relative;
+    padding-bottom: 180px;
+    box-sizing: border-box;
+    .btn-primary { background-color: #4a90e2 !important;}
+    .badge-danger { background-color: #ff0000a8 !important; }
+    li {list-style: none;}
+}

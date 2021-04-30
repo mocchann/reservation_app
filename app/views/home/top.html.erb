@@ -6,7 +6,7 @@
           <div class="form-area p-3">
             <p class="form-area-title mb-4">Potepan Shareでまだ体験したことのない旅をしよう</p>
               <%= form_for :rooms_search ,url: search_rooms_path, method: :get do |form| %>
-                <%= form.label "エリア" %>
+                <%= form.label :area, "エリア" %>
                 <%= form.text_field :area, value: "", class: "form-control mb-4", placeholder: "東京" %>
                 <%= form.submit "探す", class: "form-control btn-primary mb-4"  %>
               <% end %>

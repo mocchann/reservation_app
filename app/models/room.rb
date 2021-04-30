@@ -1,7 +1,7 @@
 class Room < ApplicationRecord
   belongs_to :maker, class_name: "User", foreign_key: "user_id" # 名前をmakerに変更して、Userレコードを取得できる
   has_many :reservations, dependent: :destroy
-  has_many :appointers, through: reservations, source: :user # userモデルでも同じ記述あり
+  has_many :appointers, through: :reservations, source: :user # userモデルでも同じ記述あり
   
   validates :name, presence: true
   validates :description, presence: true

@@ -8,25 +8,21 @@
   
       <div class="field form-group form-row">
         <div class="col-2 required-b pt-2"><span class="badge  badge-danger p-1">必須</span></div>
-          <% f.label :name %><br />
           <%= f.text_field :name, autofocus: true, placeholder: "ユーザー名", class: "form-control col-10 px-2" %>
       </div>
 
       <div class="field form-group form-row">
         <div class="col-2 required-b pt-2"><span class="badge  badge-danger p-1">必須</span></div>
-        <% f.label :email %><br />
         <%= f.email_field :email, autofocus: true, placeholder: "メールアドレス", class: "form-control col-10 px-2" %>
       </div>
 
       <div class="field form-group form-row">
         <div class="col-2 required-b pt-2"><span class="badge  badge-danger p-1">必須</span></div>
-        <% f.label :password %><br />
         <%= f.password_field :password, placeholder: "パスワード", class: "form-control col-10 px-2" %>
       </div>
 
       <div class="field form-group form-row">
         <div class="col-2 required-b pt-2"><span class="badge  badge-danger p-1">必須</span></div>
-        <% f.label :password_confirmation %><br />
         <%= f.password_field :password_confirmation, placeholder: "パスワード確認", class: "form-control col-10 px-2" %>
       </div>
 
