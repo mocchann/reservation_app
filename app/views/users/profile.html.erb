@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  
+  <div class="notice"><%= notice %></div>
   <div class="row">
     <div class="col-lg-2 d-lg-block d-none shadow user-nav user-nav-pc">
       <ul>
@@ -14,47 +14,54 @@
       </div>
     </div>  
   
-  <div class="col-lg-10 user-view">
-    <%= form_with model: @user, url: users_profile_update_path, local: true, method: :patch do |f| %>
+    <div class="col-lg-10 user-view", style="background-color: #F6F8F9;">
+      <div class="border w-50 mx-auto", style="background-color: #fff; margin-top: 30px;">
         
-      
-      <div class="user-view-box">
-        <div class="update-content">
-          <div class="row">
-            <h5>プロフィール</h5>
-          </div>  
-        </div>
-        <div class="form-group form-row p-3 mx-2 border-bottom">
-          <div class="col-md-3 required-b pt-2">
-            <%= f.label :new_icon_img, "アイコン画像" %>
-            <span class="badge badge-danger p-1">必須</span>
+        <%= form_with model: @user, url: users_profile_update_path, local: true, method: :patch do |f| %>
+          <%= hidden_field_tag :id, @user.id %>
+          
+          <div class="p-3 mx-2 border-bottom">
+            <div class="row">
+              <h5>プロフィール</h5>
+            </div>  
           </div>
-          <div id="icon-img" class="col-md-9 text-center mb-4">
-            <%= image_tag "/default_profile_img.jpg", class: "rounded-circle text-center", size: "65x65",id: "fileInputButton", onclick: "document.getElementById('fileInput').click()" %>
-            <%= f.file_field :new_icon_img, autofocus: true, autocomplete: "name", id: "fileInput", style: "display:none", "v-on:change": "btnClick" %>
+          <div class="p-3 mx-2 border-bottom text-center">
+            <% if current_user.icon_img.attached? %>
+              <%= image_tag current_user.icon_img, class: "rounded-circle", size: "65x65" %>
+            <% else %>
+              <%= image_tag "default_profile_img.jpg", class: "rounded-circle text-center", size: "65x65" %>
+            <% end %>
           </div>
-        </div>
-        <div class="form-group form-row p-3 mx-2 border-bottom">
-          <div class="col-md-3 required-b pt-2">
-            <%= f.label :name, "名前" %>
-            <span class="badge badge-danger p-1">必須</span>
+          <div class="form-group form-row p-3 mx-2 border-bottom">
+            <div class="col-md-3 required-b pt-2">
+              <%= f.label :new_icon_img, "アイコン画像" %>
+              <span class="badge badge-danger p-1">必須</span>
+            </div>
+            <div id="icon-img" class="col-md-9 mb-4">
+              <%= f.file_field :new_icon_img, autocomplete: "name" %>
+            </div>
           </div>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control col-md-9 px-2 mb-4", placeholder: "" %>
-        </div>
+          <div class="form-group form-row p-3 mx-2 border-bottom">
+            <div class="col-md-3 required-b pt-2">
+              <%= f.label :name, "名前" %>
+              <span class="badge badge-danger p-1">必須</span>
+            </div>
+            <%= f.text_field :name, autocomplete: "name", class: "form-control col-md-9 px-2 mb-4", placeholder: "" %>
+          </div>
 
-        <div class="form-group form-row p-3 mx-2 border-bottom">
-          <div class="col-md-3 required-b pt-2">
-            <%= f.label :description, "自己紹介" %>
-            <span class="badge badge-danger p-1">必須</span>
+          <div class="form-group form-row p-3 mx-2 border-bottom">
+            <div class="col-md-3 required-b pt-2">
+              <%= f.label :description, "自己紹介" %>
+              <span class="badge badge-danger p-1">必須</span>
+            </div>
+            <%= f.text_field :description, autofocus: true, autocomplete: "description",style: "height: 150px;", class: "form-control col-md-9 px-2 mb-4", placeholder: "自己紹介を入力" %>
           </div>
-          <%= f.text_field :description, autofocus: true, autocomplete: "description",style: "height: 150px;", class: "form-control col-md-9 px-2 mb-4", placeholder: "自己紹介を入力" %>
-        </div>
 
-        <div class="actions pb-3 p-3 mx-2">
-          <%= f.submit "更新", class: "col-2 btn btn-primary" %>
-        </div>
+          <div class="pb-3 p-3 mx-2">
+            <%= f.submit "更新", class: "col-2 btn btn-primary" %>
+          </div>
+        <% end %>
       </div>
-    <% end %>
-  </div>
+    </div>
   </div>
 </div>

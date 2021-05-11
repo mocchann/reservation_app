@@ -6,7 +6,7 @@ class Room < ApplicationRecord
   validates :name, presence: true
   validates :description, presence: true
   
-  has_one_attached :room_img
+  has_one_attached :room_img #ファイルとレコードの間に１対１のマッピングを設定。レコードにファイルを添付。
   attribute :new_room_img
   
   before_save do

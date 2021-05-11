@@ -12,7 +12,7 @@
     </div>
   
     <div class="col-lg-10" style="background-color: #F6F8F9;">
-      <div class="m-5 border" style="background-color: #fff;">
+      <div class="m-5 border w-50 mx-auto" style="background-color: #fff;">
         <!--エラーメッセージ-->
         <%= form_with(model: @room, local: true) do |form| %>
           <% if @room.errors.any? %>
@@ -35,7 +35,7 @@
               <%= form.label :ルーム名 %>
               <span class="badge badge-danger p-1">必須</span>
             </div>
-            <%= form.text_field :name, autofocus: true, autocomplete: "name", class: "form-control col-md-9 px-2 mb-4" %>
+            <%= form.text_field :name, autofocus: true, autocomplete: "name", placeholder: "ルーム名を入力してください", class: "form-control col-md-9 px-2 mb-4" %>
           </div>
           
           <div class="field form-group form-row p-3 mx-2 border-bottom">
@@ -43,7 +43,7 @@
               <%= form.label :ルーム紹介 %>
               <span class="badge badge-danger p-1">必須</span>
             </div>
-            <%= form.text_field :description, autofocus: true, autocomplete: "description", class: "form-control col-md-9 px-2 mb-4", style: "height: 200px;" %>
+            <%= form.text_area :description, autofocus: true, autocomplete: "description", placeholder: "ルーム説明を入力してください", class: "form-control col-md-9 px-2 mb-4", style: "height: 200px;" %>
           </div>
           
           <div class="field form-group form-row p-3 mx-2 border-bottom">
@@ -51,7 +51,7 @@
               <%= form.label :料金 %>
               <span class="badge badge-danger p-1">必須</span>
             </div>
-            <%= form.text_field :price, autofocus: true, autocomplete: "price", class: "form-control col-md-9 px-2 mb-4" %>
+            <%= form.number_field :price, autofocus: true, autocomplete: "price", placeholder: "一日あたりの料金を入力してください", class: "form-control col-md-9 px-2 mb-4" %>
           </div>
           
           <div class="field form-group form-row p-3 mx-2 border-bottom">
@@ -59,7 +59,7 @@
               <%= form.label :住所 %>
               <span class="badge badge-danger p-1">必須</span>
             </div>
-            <%= form.text_field :address, autofocus: true, autocomplete: "address", class: "form-control col-md-9 px-2 mb-4" %>
+            <%= form.text_field :address, autofocus: true, autocomplete: "address", placeholder: "住所を入力してください", class: "form-control col-md-9 px-2 mb-4" %>
           </div>
           
           <div class="field form-group form-row p-3 mx-2 border-bottom">
@@ -67,7 +67,7 @@
               <%= form.label :ルーム画像 %>
               <span class="badge badge-danger p-1">必須</span>
             </div>
-            <%= form.text_field :new_room_img, autofocus: true, autocomplete: "new_room_img", class: "form-control col-md-9 px-2 mb-4" %>
+            <%= form.file_field :new_room_img, autofocus: true, autocomplete: "new_room_img", class: "form-control col-md-9 px-2 mb-4　border border-0" %>
           </div>
       
           <div class="actions p-3 mx-2">
@@ -82,5 +82,4 @@
   </div>
 </div>
 
-<!--この１行は後で-->
-<%#= javascript_pack_tag 'room_img_attach' %>
+<!--<%#= javascript_pack_tag 'room_img_attach' %>-->

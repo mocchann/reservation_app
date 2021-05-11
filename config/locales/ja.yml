@@ -14,7 +14,11 @@ ja:
         start_date: 開始日
         end_date: 終了日
         number_of_people: 人数
-        total_amount: 合計料金
+        total_amount: 合計金額
     errors:
       message:
-        early: は今日以降の日付で選択して下さい
+        start_date: 開始日
+        end_date: 終了日
+        number_of_people: 人数
+        total_amount: 合計金額
+        

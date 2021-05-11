@@ -1,5 +1,5 @@
 <div class="container-fluid px-5 py-4">
-  <p id="notice"><%= notice %></p>
+  <div class="notice"><%= notice %></div>
   <h4 class="pb-4">登録済みルーム一覧</h4>
 
   <% if @rooms.present? %>
@@ -21,7 +21,7 @@
               <% if room.room_img.attached? %>
                 <%= link_to image_tag(room.room_img, class: "w-100 h100", style: "max-width: 240px; max-height: 140px;"), room %>
               <% else %>
-                <%= link_to image_tag("/room_img.jpg", class: "w-100 h100", style: "max-width: 240px; max-height: 140px;"), room %>
+                <%= link_to image_tag("room_img.jpg", class: "w-100 h100", style: "max-width: 240px; max-height: 140px;"), room %>
               <% end %>
             </td>
             <td><%= link_to room.name, room %></td>

@@ -9,11 +9,12 @@ class ReservationsController < ApplicationController
   def new #予約内容確認ページ
     @reservation = Reservation.new(reservation_params)
     @room = Room.find_by(id: @reservation.room_id)
-    if @reservation.start_date && @reservation.end_date && @reservation.number_of_people # 開始日・終了日・人数が入力されているか
+    if (@reservation.start_date.blank? || @reservation.end_date.blank? || @reservation.number_of_people.blank?) ||
+      @reservation.start_date < Date.today || @reservation.end_date < @reservation.start_date || @reservation.number_of_people <= 0
+      redirect_to @room, alert: "開始日・終了日・人数を正しく入力してください"
+    else
       @date_diff = (@reservation.end_date - @reservation.start_date).to_i # 終了日ー開始日の差を数字にして変数へ代入
       @reservation.total_amount = @room.price * @date_diff * @reservation.number_of_people # 値段×滞在日数×人数を変数に代入
-    else
-      redirect_to @room, alert: "開始日と終了日を入力してください"
     end
   end
  

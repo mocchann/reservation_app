@@ -1,5 +1,5 @@
-<div class="top">
-  <div class="top-main">
+<div class="top-main">
+  <div class="notice"><%= notice %></div>
     <div class="container d-flex align-items-center h-100">
       <div class="row col-lg-6">
         <div class="form-wrapper rounded shadow">
@@ -14,28 +14,29 @@
         </div>
       </div>
     </div>
-    
+  </div>
+  <div class="recommendation-wrapper">
     <div class="container">
-        <div class="panel-area m-5">
-            <h1 class="section-title">おすすめのエリア</h1>
+        <div class="recommendation-list m-5">
+            <h1>おすすめのエリア</h1>
             <div class="row">
-                <div class="panel-item col-lg-3 col-6">
+                <div class="area-image-wrapper col-lg-3 col-6">
+                    <%= link_to image_tag("img_tokyo.jpg", class: "place-img rounded w-100 shadow", alt: "東京の画像"), "/rooms/search?rooms_search%5Barea%5D=東京" %>
                     <span>東京</span>
-                    <%= link_to image_tag("img_tokyo.jpg", class: "place-img rounded w-100 shadow", alt: "東京の画像"), search_rooms_path %>
                 </div>
-                <div class="panel-item col-lg-3 col-6">
+                <div class="area-image-wrapper col-lg-3 col-6">
+                    <%= link_to image_tag("img_osaka.jpg", class: "place-img rounded w-100 shadow", alt: "大阪の画像"), "/rooms/search?rooms_search%5Barea%5D=大阪" %>
                     <span>大阪</span>
-                    <%= link_to image_tag("img_osaka.jpg", class: "place-img rounded w-100 shadow", alt: "大阪の画像"), search_rooms_path %>
                 </div>
-                <div class="panel-item col-lg-3 col-6">
+                <div class="area-image-wrapper col-lg-3 col-6">
+                    <%= link_to image_tag("img_kyoto.jpg", class: "place-img rounded w-100 shadow", alt: "京都の画像"), "/rooms/search?rooms_search%5Barea%5D=京都" %>
                     <span>京都</span>
-                    <%= link_to image_tag("img_kyoto.jpg", class: "place-img rounded w-100 shadow", alt: "京都の画像"), search_rooms_path %>
                 </div>
-                <div class="panel-item col-lg-3 col-6">
+                <div class="area-image-wrapper col-lg-3 col-6">
+                    <%= link_to image_tag("img_sapporo.jpg", class: "place-img rounded w-100 shadow", alt: "札幌の画像"), "/rooms/search?rooms_search%5Barea%5D=札幌" %>
                     <span>札幌</span>
-                    <%= link_to image_tag("img_sapporo.jpg", class: "place-img rounded w-100 shadow", alt: "札幌の画像"), search_rooms_path %>
                 </div>
             </div>
         </div>
     </div>
-</div>
+  </div>

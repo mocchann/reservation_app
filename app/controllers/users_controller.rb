@@ -14,15 +14,15 @@ class UsersController < ApplicationController
     puts @user
     puts @user
     puts @user
-    redirect_to users_profile_path
+    redirect_to users_account_path, notice: "パスワードを変更しました"
   end
   
   def profile_update
     @user = User.find_by(id: params[:id])
     if @user.update(user_params)
-      redirect_to home_top_path # ここhometoppathじゃないかも
+      redirect_to users_profile_path, notice: "プロフィールを更新しました"
     else
-      render :profile # ここもわからん
+      render :profile
     end
   end
     
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
     end
   
     def user_params
-      params.require(:user).permit(:new_icon_img,:name,:email,:description,:password)
+      params.require(:user).permit(:new_icon_img, :name, :email, :description, :password)
     end
   
 end

@@ -1,16 +1,14 @@
-<h1>予約内容確認</h1>
-<%= @reservation.end_date %>
-<%= link_to 'Back', reservations_path %>
-<div class="container">
+<div class="container w-50">
   <div class="rounded border p-4">
+    <h4 class="border-bottom p-4">
+      予約内容確認
+    </h4>
     <p>
       <%= "¥ #{@reservation.room.price}／日" %>
     </p>
     <%= form_with(model: @reservation, url: reservations_path, local: true, method: :post, class: "py-3") do |form| %>
       <% if @reservation.errors.any? %>
         <div id="error_explanation">
-          <h2><%= pluralize(@reservation.errors.count, "error") %> prohibited this reservation from being saved:</h2>
-
           <ul>
             <% @reservation.errors.each do |error| %>
               <li><%= error.full_message %></li>
@@ -21,12 +19,12 @@
       <%= form.hidden_field :user_id, value: current_user.id %>
       <%= form.hidden_field :room_id, value: @room.id %>
       <div class="field form-group">
-        <%= form.label :start_date %>
+        <%= form.label :start_date, "開始日" %>
         <%= form.text_field :start_date, class: "form-control", readonly: "readonly" %>
       </div>
 
       <div class="field form-group">
-        <%= form.label :end_date %>
+        <%= form.label :end_date, "終了日" %>
         <%= form.text_field :end_date, class: "form-control", readonly: "readonly" %>
       </div>
 
@@ -40,7 +38,7 @@
       </div>
 
       <div class="field form-group">
-        <%= form.label :total_amount %>
+        <%= form.label :total_amount, "合計金額" %>
         <%= form.text_field :total_amount, class: "form-control", readonly: "readonly" %>
       </div>
 

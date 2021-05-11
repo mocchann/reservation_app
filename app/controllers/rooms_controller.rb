@@ -8,7 +8,7 @@ class RoomsController < ApplicationController
   end
   
   def index
-    @rooms = Room.current_user.rooms.all #ログインユーザーの登録したroomsテーブルのレコードをすべて取得
+    @rooms = current_user.rooms.all #ログインユーザーの登録したroomsテーブルのレコードをすべて取得
   end
   
   def new
