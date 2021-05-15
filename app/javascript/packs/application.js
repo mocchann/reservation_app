@@ -3,11 +3,21 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
+import '@fortawesome/fontawesome-free/js/all';
+
+// rails-ujsの読み込み
 import Rails from "@rails/ujs"
+// turbolinksの読み込み
 import Turbolinks from "turbolinks"
+// activestorageの読み込み
 import * as ActiveStorage from "@rails/activestorage"
+// actioncableの読み込み
 import "channels"
 
+import 'bootstrap'
+import '../stylesheets/application'
+
+// 上で読み込んだものを起動
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()

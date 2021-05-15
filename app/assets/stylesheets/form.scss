@@ -1,0 +1,20 @@
+
+main {
+  .container {
+    padding-top: 36px;
+    font-size: 16px;
+    .login-form-wrapper, .resistration-wrapper {
+      padding: 24px;
+      .form-trim {
+        .required-a {
+          .badge {
+            color: #fff;
+            background-color: #FF0000A8 !important;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+
