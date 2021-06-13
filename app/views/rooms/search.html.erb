@@ -1,0 +1,31 @@
+
+<div class="container mb-5">
+  <h4 class="pb-4"><%= "検索結果：#{@rooms.count}件" %></h4>
+  <div class="row">
+    <% if @rooms.present? %>
+      <% @rooms.each do |room| %>
+        <div class="col-sm-6 col-lg-4 col-xl-3">
+          <div class="room-content-wrapper">
+            <%= link_to room do %>
+              <div class="card border-none" style="border-radius: 0px;">
+                <div class="card-header" height="20"></div>
+                  <% if room.room_img.attached? %>
+                    <%= image_tag room.room_img, height: "180", class: "w-100 bd-placeholder-img card-img-top" %>
+                  <% else %>
+                    <%= image_tag "/room_img.jpg", height: "180", class: "w-100 bd-placeholder-img card-img-top" %>
+                  <% end %>
+                <div class="card-body">
+                  <h5 class="float-left w-100 text-black-50"><%= room.description %></h5>
+                  <p class="float-left w-100 text-dark"><%= room.address %></p>
+                  <p class="float-right text-dark"><%= "¥ #{room.price}" %></p>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <p>検索データがありません</p>
+    <% end %>
+  </div>
+</div>
