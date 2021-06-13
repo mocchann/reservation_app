@@ -1,5 +1,5 @@
 current directory: /Users/motti/Dropbox/My Mac (teihonnaoyanoMacBook-Pro.local)/Desktop/reservation_app/vendor/cache/ruby/2.6.0/gems/ffi-1.15.1/ext/ffi_c
-/Users/motti/.rbenv/versions/2.6.6/bin/ruby -I /Users/motti/.rbenv/versions/2.6.6/lib/ruby/2.6.0 -r ./siteconf20210614-27924-140eeff.rb extconf.rb
+/Users/motti/.rbenv/versions/2.6.6/bin/ruby -I /Users/motti/.rbenv/versions/2.6.6/lib/ruby/2.6.0 -r ./siteconf20210614-28938-vcsyvw.rb extconf.rb
 checking for ffi_prep_closure_loc() in -lffi... yes
 checking for ffi_prep_cif_var()... yes
 checking for ffi_raw_call()... yes
@@ -40,4 +40,4 @@ linking shared-object ffi_c.bundle
 
 current directory: /Users/motti/Dropbox/My Mac (teihonnaoyanoMacBook-Pro.local)/Desktop/reservation_app/vendor/cache/ruby/2.6.0/gems/ffi-1.15.1/ext/ffi_c
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 ffi_c.bundle ./.gem.20210614-27924-1my6vs1
+/usr/bin/install -c -m 0755 ffi_c.bundle ./.gem.20210614-28938-e2x0ih
