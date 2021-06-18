@@ -1,7 +1,8 @@
 current directory: /Users/motti/Dropbox/My Mac (teihonnaoyanoMacBook-Pro.local)/Desktop/reservation_app/vendor/cache/ruby/2.6.0/gems/pg-0.17.1/ext
-/Users/motti/.rbenv/versions/2.6.6/bin/ruby -I /Users/motti/.rbenv/versions/2.6.6/lib/ruby/site_ruby/2.6.0 -r ./siteconf20210618-61989-1j20gtg.rb extconf.rb
-checking for pg_config... yes
-Using config values from /usr/local/bin/pg_config
+/Users/motti/.rbenv/versions/2.6.6/bin/ruby -I /Users/motti/.rbenv/versions/2.6.6/lib/ruby/site_ruby/2.6.0 -r ./siteconf20210618-68568-b5n2r2.rb extconf.rb --with-pg-config\=/Applications/Postgres.app/Contents/MacOS/bin/pg_config
+Using config values from /Applications/Postgres.app/Contents/MacOS/bin/pg_config
+sh: /Applications/Postgres.app/Contents/MacOS/bin/pg_config: No such file or directory
+sh: /Applications/Postgres.app/Contents/MacOS/bin/pg_config: No such file or directory
 checking for libpq-fe.h... yes
 checking for libpq/libpq-fs.h... yes
 checking for pg_config_manual.h... yes

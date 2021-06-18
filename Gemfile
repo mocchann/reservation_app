@@ -78,4 +78,6 @@ gem 'devise-i18n-views'
 
 gem 'bootstrap', '~> 4.3.1'
 
-gem 'pg', group: :production
+group :production do
+  gem 'pg'
+end
