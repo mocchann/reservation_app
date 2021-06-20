@@ -11,7 +11,7 @@ require "action_mailbox/engine"
 require "action_text/engine"
 require "action_view/railtie"
 require "sprockets/railtie"
-
+require "action_cable"
 
 
 # Require the gems listed in Gemfile, including any gems
