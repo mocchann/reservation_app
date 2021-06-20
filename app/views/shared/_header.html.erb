@@ -4,16 +4,15 @@
     <%= form_for :rooms_search ,url: search_rooms_path, method: :get do |form| %>
       <div class="header-sharch d-lg-inline-block d-none">
         <i class="fas fa-map-marker-alt" style="margin-top: 12px; margin-left: 5px; position:absolute;"></i>
-          <%= form.text_field :area, value: "", class: "form-control pl-4", placeholder: "エリア" %>
+        <%= form.text_field :area, value: "", class: "form-control pl-4", placeholder: "エリア" %>
       </div>
       <div class="header-sharch d-lg-inline-block d-none">
         <i class="fas fa-search" style="margin-top: 12px; margin-left: 5px; position:absolute;"></i>
-          <%= form.text_field :keyword, value: "", class: "form-control pl-4", placeholder: "キーワード" %>
+        <%= form.text_field :keyword, value: "", class: "form-control pl-4", placeholder: "キーワード" %>
       </div>
       <%= form.submit "", class: "d-none" %>
     <% end %>
   </div>
-  
   <div class="float-right mr-2">
     <% if current_user.blank? %> <!--current_userが存在しないまたは値が入っていないときtrue-->
       <div class="mt-3">

@@ -13,13 +13,10 @@
         </ul>
       </div>
     </div>  
-  
     <div class="col-lg-10 user-view", style="background-color: #F6F8F9;">
       <div class="border w-50 mx-auto", style="background-color: #fff; margin-top: 30px;">
-        
         <%= form_with model: @user, url: users_profile_update_path, local: true, method: :patch do |f| %>
           <%= hidden_field_tag :id, @user.id %>
-          
           <div class="p-3 mx-2 border-bottom">
             <div class="row">
               <h5>プロフィール</h5>
@@ -48,7 +45,6 @@
             </div>
             <%= f.text_field :name, autocomplete: "name", class: "form-control col-md-9 px-2 mb-4", placeholder: "" %>
           </div>
-
           <div class="form-group form-row p-3 mx-2 border-bottom">
             <div class="col-md-3 required-b pt-2">
               <%= f.label :description, "自己紹介" %>
@@ -56,7 +52,6 @@
             </div>
             <%= f.text_field :description, autofocus: true, autocomplete: "description",style: "height: 150px;", class: "form-control col-md-9 px-2 mb-4", placeholder: "自己紹介を入力" %>
           </div>
-
           <div class="pb-3 p-3 mx-2">
             <%= f.submit "更新", class: "col-2 btn btn-primary" %>
           </div>

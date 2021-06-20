@@ -10,7 +10,6 @@
         <li class="active">基本情報</li>
       </ul>
     </div>
-  
     <div class="col-lg-10" style="background-color: #F6F8F9;">
       <div class="m-5 border w-50 mx-auto" style="background-color: #fff;">
         <!--エラーメッセージ-->
@@ -29,7 +28,6 @@
           <div class="form-group p-3 mx-2 border-bottom">
             <h5>ルーム情報登録</h5>
           </div>
-          
           <div class="field form-group form-row p-3 mx-2 border-bottom">
             <div class="col-md-3 required-b pt-2">
               <%= form.label :ルーム名 %>
@@ -37,7 +35,6 @@
             </div>
             <%= form.text_field :name, autofocus: true, autocomplete: "name", placeholder: "ルーム名を入力してください", class: "form-control col-md-9 px-2 mb-4" %>
           </div>
-          
           <div class="field form-group form-row p-3 mx-2 border-bottom">
             <div class="col-md-3 required-b pt-2">
               <%= form.label :ルーム紹介 %>
@@ -45,7 +42,6 @@
             </div>
             <%= form.text_area :description, autofocus: true, autocomplete: "description", placeholder: "ルーム説明を入力してください", class: "form-control col-md-9 px-2 mb-4", style: "height: 200px;" %>
           </div>
-          
           <div class="field form-group form-row p-3 mx-2 border-bottom">
             <div class="col-md-3 required-b pt-2">
               <%= form.label :料金 %>
@@ -53,7 +49,6 @@
             </div>
             <%= form.number_field :price, autofocus: true, autocomplete: "price", placeholder: "一日あたりの料金を入力してください", class: "form-control col-md-9 px-2 mb-4" %>
           </div>
-          
           <div class="field form-group form-row p-3 mx-2 border-bottom">
             <div class="col-md-3 required-b pt-2">
               <%= form.label :住所 %>
@@ -61,7 +56,6 @@
             </div>
             <%= form.text_field :address, autofocus: true, autocomplete: "address", placeholder: "住所を入力してください", class: "form-control col-md-9 px-2 mb-4" %>
           </div>
-          
           <div class="field form-group form-row p-3 mx-2 border-bottom">
             <div class="col-md-3 required-b pt-2">
               <%= form.label :ルーム画像 %>
@@ -69,17 +63,11 @@
             </div>
             <%= form.file_field :new_room_img, autofocus: true, autocomplete: "new_room_img", class: "form-control col-md-9 px-2 mb-4　border border-0" %>
           </div>
-      
           <div class="actions p-3 mx-2">
             <%= form.submit "登録", class: "col-2 btn btn-primary mx-3" %>
           </div>
-          
         <% end %>
-        
       </div>
     </div>
-    
   </div>
 </div>
-
-<!--<%#= javascript_pack_tag 'room_img_attach' %>-->

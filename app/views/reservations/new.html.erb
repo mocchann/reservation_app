@@ -22,30 +22,24 @@
         <%= form.label :start_date, "開始日" %>
         <%= form.text_field :start_date, class: "form-control", readonly: "readonly" %>
       </div>
-
       <div class="field form-group">
         <%= form.label :end_date, "終了日" %>
         <%= form.text_field :end_date, class: "form-control", readonly: "readonly" %>
       </div>
-
       <div class="field form-group border-bottom">
         <h6><%= "使用日数 : #{@date_diff}日" %></h6>
       </div>
-
       <div class="field form-group border-bottom">
           <%= form.hidden_field :number_of_people, value: @reservation.number_of_people %>
         <h6><%= "人数 : #{@reservation.number_of_people}人" %></h6>
       </div>
-
       <div class="field form-group">
         <%= form.label :total_amount, "合計金額" %>
         <%= form.text_field :total_amount, class: "form-control", readonly: "readonly" %>
       </div>
-
       <div class="field form-group border-bottom">
         <p>上記内容でよろしければ「予約を確定」を押してください</p>
       </div>
-
       <div class="actions form-group">
         <%= form.submit "予約を確定", class: "btn btn-primary my-3 form-control" %>
         <%= link_to "ルーム詳細に戻る", @room, class: "btn btn-secondary form-control" %>

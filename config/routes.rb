@@ -14,6 +14,5 @@ Rails.application.routes.draw do
     patch 'account_update'
     patch 'profile_update'
   end
-    
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
