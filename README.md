@@ -15,23 +15,23 @@ https://obscure-fjord-38948.herokuapp.com/
 ・RSpec<br>
 
 # 機能一覧
-・検索機能
-  -エリア検索
-  -フリーワード検索
-・ユーザー登録機能(devise)
-  -アイコン設定、自己紹介、ユーザー名登録
-・登録機能
-  -貸したい部屋を登録
-・予約機能
-  -借りたい部屋を予約
-・一覧表示
-  -登録した部屋
-  -予約した部屋
+・検索機能<br>
+  -エリア検索<br>
+  -フリーワード検索<br>
+・ユーザー登録機能(devise)<br>
+  -アイコン設定、自己紹介、ユーザー名登録<br>
+・登録機能<br>
+  -貸したい部屋を登録<br>
+・予約機能<br>
+  -借りたい部屋を予約<br>
+・一覧表示<br>
+  -登録した部屋<br>
+  -予約した部屋<br>
 
 # テスト
-・RSpec
-  -factories
-  -models
-  -requets
-  -routing
-  -support
+・RSpec<br>
+  -factories<br>
+  -models<br>
+  -requets<br>
+  -routing<br>
+  -support<br>
