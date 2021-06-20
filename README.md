@@ -1,18 +1,18 @@
 # Potepan Share
-プログラミングスクール ポテパンキャンプで作成した「宿泊・予約サービス」です。
+プログラミングスクール ポテパンキャンプで作成した「宿泊・予約サービス」です。<br>
 レスポンシブ対応しているため、スマホからもご確認頂けます。
 
 https://obscure-fjord-38948.herokuapp.com/
 <img width="2048" alt="トップページ" src="https://user-images.githubusercontent.com/78259954/122678530-4697b300-d222-11eb-94fe-6455139dac5e.png">
 
 # 使用技術
-・Ruby 2.6.6
-・Ruby on Rails 6.1.3
-・PostgreSQL(production)
-・SQLite3(development,test)
-・Puma
-・Heroku
-・RSpec
+・Ruby 2.6.6<br>
+・Ruby on Rails 6.1.3<br>
+・PostgreSQL(production)<br>
+・SQLite3(development,test)<br>
+・Puma<br>
+・Heroku<br>
+・RSpec<br>
 
 # 機能一覧
 ・検索機能
@@ -35,9 +35,3 @@ https://obscure-fjord-38948.herokuapp.com/
   -requets
   -routing
   -support
-
-https://img.shields.io/github/issues/mocchann/reservation_app
-https://img.shields.io/github/forks/mocchann/reservation_app
-https://img.shields.io/github/stars/mocchann/reservation_app
-https://img.shields.io/github/license/mocchann/reservation_app
-https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Fmocchann%2Freservation_app
