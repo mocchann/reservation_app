@@ -5,11 +5,13 @@
 //   }]
 // }
 
+
+// config/webpack/rules/vue.js
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
   module: {
-    rules: [
+    loaders: [
       {
         test: /\.vue$/,
         loader: 'vue-loader'
