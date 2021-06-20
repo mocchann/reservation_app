@@ -1,17 +1,9 @@
-// module.exports = {
-//   test: /\.vue(\.erb)?$/,
-//   use: [{
-//     loader: 'vue-loader'
-//   }]
-// }
-
-
 // config/webpack/rules/vue.js
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.vue$/,
         loader: 'vue-loader'
